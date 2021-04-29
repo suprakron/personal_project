@@ -1,0 +1,791 @@
+/* เป็นการดึง font ที่ชื่อว่า Montserrat เข้ามาใช้  */
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/*  เป็นการกำหนด ขนาดของ font ที่อยู่ภายใต้ แท็ก html ให้มีขนาด 10 px และเป็นการดึง font ที่ชื่อว่า Montserrat มาใช้*/
+html {
+	font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+/* เป็นการกำหนดไม่ให้มีเส้นใต้ข้อความที่อยู่ภายใต้แท็ก a */
+a {
+	text-decoration: none;
+}
+
+/* กำหนดให้ element ที่มี class เป็น container มีการแสดงผลแบบ flex โความสูงของ viewport เป็น 100 และจัดโครงสร้างภายในให้อยู่กึ่งกลาง */
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*  เป็นการกำหนด ขนาดของรูปภาพ ที่อยู่ภายใต้ แท็ก img ให้มีขนาด ความสูง 100 % ความกว้าง 100 % และกำหนด object ให้อยู่ในรูปแบบ cover  */
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+/*  เป็นการกำหนด ขนาดของตัวอักษร ที่อยู่ภายใต้ แท็ก p ให้มีขนาด 1.4 rem กว้าง 5 px สูง 2.5 rem กว้าง 300 px และกำหนดระยะห่างของตัวอักษร และมีสีดำ */
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300px;
+	letter-spacing: .05rem;
+}
+
+/* กำหนดให้ element ที่มี class เป็น section-title ให้ มีขนาดตัวอักษร 4 rem ความสูงของ ตัวอักษร 300 px และมีสีดำ และมีความกว้าง 10 px และอยู่บริเวณตรงกลาง */
+.section-title {
+	font-size: 4rem;
+	font-weight: 300px;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+
+/* กำหนดให้ element ที่ใช้ class เป็น  section-title และอยู่ภายใต้แท็ก span ใหมีสี  crimson*/
+.section-title span {
+	color: crimson;
+}
+
+/* กำหนดให้ element ที่ใช้ class เป็น cta ให้มีการแสดงผลเป็นลักษณะ inline-block ความกว้างมีขนาด 10 px * 30 px และสีbackground ข้างหลัง เป็นสี transparent และมีขนาดตัวอักษร 2 rem*/
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid crimson;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	margin-top: 30px;
+	transition: .3s ease;
+	transition-property: background-color, color;
+}
+
+/* กำหนดให้ element ที่ใช้ class เป็น cta และใช้เอ็ฟเฟค hover ให้มีสี ขาว และสีของ background เป็นสี crimson*/
+.cta:hover {
+	color: white;
+	background-color: crimson;
+}
+/* กำหนดให้ element ที่ใช้ class เป็น brand และแท็ค h1 ที่อยู่ภายใต้ class  brand ให้มีตัวอักษรขนาด  3 rem และเป็นการกำหนดให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ทั้งหมดและมีสีดำอ่อน */
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: rgb(141, 140, 140);
+}
+
+/* กำหนดให้ element ที่ใช้ class brand และ แท็ค h1 และ span ที่อยู่ภายใต้ class brand ให้มีสี crimson */
+.brand h1 span {
+	color: crimson;
+}
+ 
+ 
+
+/*  css rule ในส่วนของ  element ที่ใช้ Header   */
+
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header ให้ กำหนดให้กรอบ ให้ fixed ทางซ้าย 0 ความสูง ให้ปรับอัตโนมัติ */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class header ให้มีความสูงไม่เกิน 8 จากความสูงของ viewport และ สี พื้นหลังเป็นสี gsba */
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(33, 185, 134, 0.24);
+	transition: .3s ease background-color;
+}
+
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-bar ให้มีลักษณะการแสดงผลเป็น flex และแสดงผลอยู่กึ่งกลาง และจัดโครงสร้าง ให้เป็น space-between และมีความสูงและความกว้างเป็น 100 % */
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-list และแท็ค ul ที่อยู่ภายใต้ class nav-list ให้มีลักษณะการแสดงผลเป็นค่าเริ่มต้น และสัพื้นหลังเป็นสีแดง และมีความสูงเป็น100 ของ view port และมีการแสดงผล เป็น flex และแสดงอยู่ในรูปแบบของ colum*/
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(55, 78, 92);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: .5s ease left;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-list และแท็ค ul ที่อยู่ภายใต้ class nav-list และใช้ class active ให้แสดงผลอยู่ทางซ้าย */
+#header .nav-list ul.active {
+	left: 0%;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-list และแท็ค ul และแท็ค a  ที่อยู่ภายใต้ class nav-list  ให้มีขนาดของตัวอักษร เท่ากับ 2.5 rem และความสูง เป็น 500 และมีสี gsb สีเขียวอ่อน และมีลักษณะการแสดงผลเป็น block */
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: rgb(70, 190, 15);
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-list และแท็ค ul และแท็ค a  ที่อยู่ภายใต้ class nav-list และแสดงผล แสดงผลภายหลังelementหลอกจะเพิ่มข้อความจากแอตทริบิวต์ของ element data-content:*/
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(13, 65, 30, 0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: .3s ease letter-spacing;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-list และแท็ค ul และแท็ค li เมื่อแสดงผลเป็นรูปแบบ hover และแท็ค a เมื่อแสดงผลในภายหลังให้ initial */
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class nav-list และแท็ค ul และแท็ค li มื่อแสดงผลเป็นรูปแบบ hover และให้ element ที่อยู่ภายใต้ แท็ค a ให้มีสี  crimson */
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class และใช้ class ที่ชื่อ ว่า hamburger ให้มีความสูงและความกว้าง เป็น 60 px และมีการแสดงผลเป็นลักาณะของ inline-block และมีความกว้างของขอบเป็น 50 px และมีสีเป็นสีแดง */ 
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid rgb(184, 15, 15);
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(.8);
+	margin-right: 20px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class และใช้ class ที่ชื่อ ว่า hamburger  และเมื่อแสดงผลในภาย หลัง ให้มีความสูงและความกว้างเป็น 100 % และมีขอบ ขนาด 50%และมีสีเป็น สีแดง  */
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid rgb(105, 20, 20);
+	animation: hamburger_puls 1s ease infinite;
+}
+
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class  ที่ชื่อ ว่า hamburger และ class ที่ชื่อ ว่า bar ให้มีความสูง เป็น 1px ความกว้าง 30 px และสีพื้นหลังเป็น สีแดง */ 
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: rgb(204, 22, 22);
+	z-index: -1;
+}
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class  ที่ชื่อ ว่า hamburger และ class ที่ชื่อ ว่า bar เมื่อก่อนแสดงผลและภายหลังการแสดงผล ให้ มีความกว้างเป็น 100% และความสูงเป็น 100% และมีสีแดง และให้มีรูปแบบเมื่อกดปุ่ม เป็นtop และ bottom */
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: rgb(204, 22, 22);
+	transition: .3s ease;
+	transition-property: top, bottom;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class  ที่ชื่อ ว่า hamburger และ class ที่ชื่อ ว่า bar เมื่อภายหลังการแสดงผล ให้ top มีขนาดเท่ากับ 8 px  */
+#header .hamburger .bar::after {
+	top: 8px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class  ที่ชื่อ ว่า hamburger และ class ที่ชื่อ ว่า bar เมื่อก่อนการแสดงผล ให้ bottom  มีขนาดเท่ากับ 8 px  */
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class  ที่ชื่อ ว่า hamburger  และ class ที่ชื่อ ว่า bar และ class ที่ชื่อ ว่า active เมื่อก่อนการแสดงผล ให้ bottom  มีขนาดเท่ากับ 8 px  */
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า header และใช้ class  ที่ชื่อ ว่า hamburger และ class ที่ชื่อ ว่า bar และ class ที่ชื่อ ว่า bar เมื่อภายหลังการแสดงผล ให้ top มีขนาดเท่ากับ 8 px  */
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+ 
+/* End css rule Header */
+
+
+/*  css rule ในส่วนของ hero    */
+
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero ให้รูป ที่อยู่ตามที่ระบุเป็นรูปพื้นหลัง และมีขนาด cover  */
+#hero {
+	background-image: url(../images/tiw2.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+}
+
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero เมื่อภายหลังการแสดงผล ให้มีความสูงและความกว้างเป็น 100% และสีพื้นหลังเป็นสีดำ */
+#hero::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: .7;
+	z-index: -1;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero และ element ที่ใช้ class ที่ชื่อว่า hero ให้มีความกว้างสูงสุด 1200px และมีลักษณะการแสดงผล เป็นlex-start*/
+#hero .hero {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+	justify-content: flex-start;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero และแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้ มีลักษณะการแสดงผลเป็น block และความกว้างเป็น fit-content และมีตัวอักษรขนาด 4rem */
+#hero h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal .5s ease forwards;
+	animation-delay: 1s;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero ละแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้เลือก id ชื่อของ  item อันดับแรกให้แสดง animation-delay เป็นเวลา 1 s*/
+#hero h1:nth-child(1) {
+	animation-delay: 1s;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero ละแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้เลือก id ชื่อของ  item อันดับ2ให้แสดง animation-delay เป็นเวลา 1 s*/
+#hero h1:nth-child(2) {
+	animation-delay: 2s;
+}
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero ละแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้เลือก id ชื่อของ  item อันดับ3 ให้แสดง animation-delay เป็นเวลา 1 s*/
+#hero h1:nth-child(3) {
+	animation: text_reveal_name .5s ease forwards;
+	animation-delay: 3s;
+}
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero ละแท็ค h1 span  ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้ ความกว้างทางซ้าย 0 และความสูง 100 % และสีของพื้นหลัง เป็นสี greenyellow*/
+#hero h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: greenyellow;
+	animation: text_reveal_box 1s ease;
+	animation-delay: .5s;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero span ละแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้เลือก id ชื่อของ  item อันดับ1 ให้แสดง animation-delay เป็นเวลา 0.5s*/
+#hero h1:nth-child(1) span {
+	animation-delay: .5s;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero span ละแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้เลือก id ชื่อของ  item อันดับ2 ให้แสดง animation-delay เป็นเวลา 1.54 s*/
+#hero h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า hero span ละแท็ค h1 ที่อยุ่ภายใต้ id ที่ชื่อว่า hero ให้เลือก id ชื่อของ  item อันดับ3 ให้แสดง animation-delay เป็นเวลา 2.5s*/
+#hero h1:nth-child(3) span {
+	animation-delay: 2.5s;
+}
+
+/* End  css rule Hero  */
+
+/* css rule Keyframes */
+
+/* เป็นการกำหนดการเคลื่อนไหวในส่วนของhamburger_puls เมื่อถึง 0 % ให้ opacity: 1; transform: scale(1); และเมื่อถึง 100% ให้ opacity: 0; transform: scale(1.4);*/
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+
+/*เป็นการกำหนดการเคลื่อนไหวในส่วนของ text_reveal_box เมื่อถึง 	50%  ให้มีความกว้างเป็น  100% และทางซ้ายกว้าง 0 และเมื่อ 100 %  ให้มีความกว้างเป็น  0% และทางซ้ายกว้าง 100% */
+	 
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+
+/*เป็นการกำหนดการเคลื่อนไหวในส่วนของ text_reveal เมื่อถึง 100 % ให้มีสีขาว  */
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+
+/*เป็นการกำหนดการเคลื่อนไหวในส่วนของ text_reveal_name มื่อถึง 100 % ให้ ตัวอักษรกว้าง 500 px*/
+@keyframes text_reveal_name {
+	100% {
+		color: rgb(180, 20, 220);
+		font-weight: 500;
+	}
+}
+/* End css rule Keyframes */
+ 
+/* css rule Resume page */
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume ให้มีการแสดงผลเปน คอลัมน์ และมีความกว้างสูงสุด 1200px และมีขอบกว้าง 100 px*/
+#resumes .resumes {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resumes-header และแท็ก h1 ที่อยู่ภายใต้ ระยะขอบใช้เพื่อสร้างพื้นที่รอบ ๆ element มีขนาด 50 px */
+#resumes .resumes-header h1 {
+	margin-bottom: 50px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า all-resumes ให้มีลักษณะการแสดงผล เป็นรูปแบบของ flex และอยู่ในลักษณะกึ่งกลาง และอยู่ใน column*/
+#resumes .all-resumes {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-item ให้มีลักษณะการแสดงผล เป็นรูปแบบของ flex และอยู่ในลักษณะกึ่งกลางและอยู่ใน column มีความกว้าง 80 % และความกว้างระหว่างขอบ 20 px โดยปรับอัตโนมัติ*/
+#resumes .resume-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-info ให้มีลักษณะการแสดงผล เป็นรูปแบบของ flex และอยู่ในลักษณะกึ่งกลางและอยู่ใน column และมีสีของรูปภาพเป็นสีดำอ่อน และสีขาว */
+#resumes .resume-info {
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	color: white;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-info และแท็ค h1 ที่อยู่ภายใต้ ให้ตัวอักษร มีขนาด 4 rem และความกว้าง ของตัวอักษร 500 px*/
+#resumes .resume-info h1 {
+	font-size: 4rem;
+	font-weight: 500;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-info และแท็ค h1 ที่อยู่ภายใต้ ให้ตัวอักษร มีขนาด 4 rem และความกว้าง ของตัวอักษร 500 px*/
+#resumes .resume-info h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	margin-top: 10px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-info และแท็ค p ที่อยู่ภายใต้ ให้ตัวอักษรเป็นสีขาว*/
+#resumes .resume-info p {
+	color: white;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-img ให้มีความสูงเป็น 300 px และoverflowมีคุณสมบัติเป็น  hidden*/
+#resumes .resume-img {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-img และเมื่อแสดงผลในภายหลัง ให้มีความกว้างและความสูงเป็น 100% และรูปที่อยู่ข้างหลังมีสี ดำอ่อน*/
+#resumes .resume-img:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: .7;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-img และแท็ค img ที่อยู่ภายใต้ ให้ 	transitionให้เท่ากับ .3s ease transform*/
+#resumes .resume-img img {
+	transition: .3s ease transform;
+}
+
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  resumes และ class ที่ชื่อว่า resume-item เมื่อก่อนการแสดงผล โดยที่คลาส resume-img  และ แท็ค img โดยให้transformให้เท่ากับscale(1.1) */
+#resumes .resume-item:hover .resume-img img {
+	transform: scale(1.1);
+}
+/* End css rule resume page */
+
+/* css rule education page */
+
+/* กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า educations โดยให้ พื้นหลังมีขนาด cover และแสดงในรูปของ column และมีความกว้างระหว่างขอบเป็น 100 px*/
+#educations .educations {
+	background-size: cover;
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+     
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-top โดยกำหนดให้มีความกว้างสูงสุด 500 px และความกว้างระหว่าง element เป็น auto */
+#educations .education-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-bottom โดยให้แสดงอยุ่ในลักษณะของ flex และให้ item อยู่ตรงกลาง ความกว้างระหว่างขอบ ด้านบนขนาด 50 px */
+#educations .education-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-item โดยให้แสดงอยู่ในลักษณะ ของflex และ แสดงอยู่ในลักษณะของ column และรูกำหนดให้รูปพื้นหลังอยู่ตามตำแหน่งที่ระบุ */
+#educations .education-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(../images/tiw2.jpg);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-item เมื่อแสดงในภายหลัง กำหนดให้ความสูงและความกว้างเป็น 100% และสีพื้นหลังเป็นสีดำอ่อน*/
+#educations .education-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #37393b 0%, #485563 100%);
+	opacity: .9;
+	z-index: -1;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-bottom และ คลาส ที่ชื่อว่า icon กำหนดให้มีความสูงและความกว้างเป็น 80 px และความกว้างระหว่างbottom เป็น 20 px*/
+#educations .education-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-item และแท็ค h2 โดยให้ขนาดของตัวอักษรขนาด 2 rem และมีสีเป็นสีไข่อ่อนและความกว้างระหว่างbottom เป็น 10 px */
+#educations .education-item h2 {
+	font-size: 2rem;
+	color: rgb(148, 139, 139);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า educations และคลาส ที่ชื่อว่า education-item และแท็ค p  ดดยกำหนดให้มีสี เป็นสีขาว และกำหนดให้ตัวอักษร อยู่ทางซ้าย */
+#educations .education-item p {
+	color: white;
+	text-align: left;
+}
+/* End css rule  educations  */
+
+
+/*  css rule ในส่วนของ หน้า java page และ ในส่วนของเกม GAME breakout  */
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า myCanvas โดยกำหนดให้สีพื้นหลังเป็นสีแดงอ่อน และแสดงผล ในลักษณะของ block */
+  #myCanvas {
+	background: rgb(107, 45, 45);
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	margin: 0;
+	width: 300px;
+	height: 300px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า  games และ class ที่ชื่อว่า games ให้มีการแสดงผลเปน คอลัมน์ และมีความกว้างสูงสุด 1400px และมีขอบกว้าง 100 px*/
+#games .games {
+	background-size: cover;
+	flex-direction: column;
+	text-align: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า games และคลาส ที่ชื่อว่า game-top โดยกำหนดให้มีความกว้างสูงสุด 500 px และความกว้างระหว่าง element เป็น auto */
+#games .game-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+ 
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า games และคลาส ที่ชื่อว่า game-bottom โดยให้แสดงอยุ่ในลักษณะของ flex และให้ item อยู่ตรงกลาง ความกว้างระหว่างขอบ ด้านบนขนาด 50 px */
+#games .game-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า games และคลาส ที่ชื่อว่า game-item โดยให้แสดงอยู่ในลักษณะ ของflex และ แสดงอยู่ในลักษณะของ column*/
+#games .game-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 50px;
+	border-radius: 10px;
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า games และคลาส ที่ชื่อว่า game-item เมื่อแสดงในภายหลัง กำหนดให้ความสูงและความกว้างเป็น 100% และสีพื้นหลังเป็นสีน้ำเงินอ่อน*/
+#games .game-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #166abe 0%, #8db1d8 100%);
+	opacity: .9;
+	z-index: -1;
+}
+/* End css rule  GAME */
+
+/* css rule ในส่วนของ  Footer */
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer โดยกำหนดให้้สีของรูปภาพมีสีดำอ่อน */
+#footer {
+	background-image: linear-gradient(60deg, #596d85 0%, #485563 100%);
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer และelement ที่ใช้ คลาสที่ชื่อว่า footer โดยให้มีความสูงไม่เกิน 200 px และความกว้างระหว่าง element ด้านบน 50 px */
+#footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer และแท็ค h2 ที่อยู่ภายใต้คลาส ให้มีสีดำอ่อน และความกว้างของตัวอักษร 500 px และขนาดของตัวอักษร 1.8 rem */
+#footer h2 {
+	color: rgb(255, 255, 255);
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: .1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer และ element ที่ใช้คลาสที่ชื่อว่า social-icon โดยกำหนด ให้การแสดงผลเป็นลักษณะ flex และระยะห่างหว่าง bottom ให้มีขนาด 30 px  */
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer และ element ที่ใช้คลาสที่ชื่อว่า social-item กำหนดให้ ความสูงและความกว้างเป็น 50 px และความกว้างระหว่าง element 5 px */
+#footer .social-item {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer ที่ใช้คลาสที่ชื่อว่า social-item และแท็ค img  แปลงภาพระดับสีเทาอยู่ในระดับ1  */
+#footer .social-item img {
+	filter: grayscale(1);
+	transition: .3s ease filter;
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer ที่ใช้คลาสที่ชื่อว่า social-item และแสดงในภายหลัง และแท็ค img  แปลงภาพระดับสีเทาอยู่ในระดับ0  */
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+
+/*กำหนดให้ element ที่ใช้ id ที่ชื่อว่า footer และ element ที่อยู่ภายใต้ แท็ค p  กำหนดให้มีสีขาวและมีขนาดของ ตัวอักษรขนาด 1.3 rem */
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+}
+/* End css rule  Footer */
+ 
+
+
+/*---------- Responsive webdesign ----------*/
+
+/* Media Query สำหรับ ขนาดของ  Tablet ที่มีขนาดหน้าจอที่น้อยกว่า 768 px */
+@media only screen and (min-width: 768px) {
+	 
+/*กำหนดให้ element ที่มี class ที่ชื่อว่า cta ให้มีขนาดของตัวอักษร เป็น 2.5 rem และความกว้างมีขนาด 20 * 60 px */ 
+	.cta {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+/*กำหนดให้ แท็ค h1 ที่ใช้class ที่ชื่อว่า section-title โโยกำหนดให้ตัวอักษรมีขนาด 6 rem และแสดงผลอยู่ กึ่งกลาง*/
+	h1.section-title {
+		font-size: 6rem;
+		text-align: center;
+	}
+	
+	/* กำหนดให้ element ที่มี  id ที่ชื่อว่า hero และ แท็ค h1 กำหนดให้ตัวอักษรให้มีขนาด 7 rem */
+	#hero h1 {
+		font-size: 7rem;
+	}
+ 
+	/* กำหนดให้ element ที่มี  id ที่ชื่อว่าeducations และคลาสที่มีชื่อว่า education-bottom และคลาสที่มีชื่อว่า education-item กำหนดขนาดของตัวอักษร 45 %  */
+	#educations .education-bottom .education-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+ 
+    /* กำหนดให้ element ที่มี  id ที่ชื่อว่า mycanvas โดยกำหนดความกว้าง และความสูงให้ปรับตามขนาดขแงหน้าจอให้เหมาะสม*/
+	  #myCanvas {
+		 width: auto;
+		 height: auto;
+		 padding: 2.5%;
+		 margin: 2.5%;
+	 }
+
+	 /* กำหนดให้ element ที่มี  id ที่ชื่อว่า resume และคลาส ที่ชื่อว่า resume-item ให้แสดงเป็นแถว  */
+	#resumes .resume-item {
+		flex-direction: row;
+	}
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า resumes และคลาส ที่ชื่อว่า resume-item เป็นคำสั่งที่ใช้สำหรับเลือกคลาสชื่อ item เฉพาะที่เป็นเลขคู่ คือ 2,4, และ row-reverse*/
+	#resumes .resume-item:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า resume และคลาส ที่ชื่อว่า resume-item กำหนดให้มีความสูงเป็น 400 px และความกว้างระหว่างขอบ element เป็น 0 และความกว้างของขอบ 0 px*/
+	#resumes .resume-item {
+		height: 400px;
+		margin: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า resumes และคลาส ที่ชื่อว่า all-resumes และคลาส ที่ชื่อว่า resume-info */
+	#resumes .all-resumes .resume-info {
+		height: 100%;
+	}
+
+   /*กำหนดให้ element ที่มี  id ที่ชื่อว่า resumes และคลาส ที่ชื่อว่า all-resumes และคลาส ที่ชื่อว่า resumes-img ให้มีคว่ามสูงเป็น 100 % */
+	#resumes .all-resumes .resume-img {
+		height: 100%;
+	}
+ 
+
+}
+/* End Media Query Tablet  */
+
+/* Media Query สำหรับ ขนาดของ Desktop ที่มีขนาดของหน้าจอที่น้อยกว่า 1200px */
+@media only screen and (min-width: 1200px) {
+	/* กำหนดให้ element ที่มี  id ที่ชื่อว่า header และ คลาสที่มีชื่อว่า hamburger ให้มีการแสดงผลเป็นค่าเริ่มต้น*/
+	#header .hamburger {
+		display: none;
+	}
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า header และคลาสที่ชื่อว่า nav-list และแท็ค ul ให้มีการแสดงผลเป็น block และความสูงให้ปรับอัตโนมัติ ตามขนาดของหน้าจอ*/
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า header และคลาสที่ชื่อว่า nav-list และแท็ค ul  li ให้มีการแสดงผลในลักษณะinline-block*/
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า header และคลาสที่ชื่อว่า nav-list และแท็ค ul  li a ให้มีขนาดตัวอักษร 1.8 rem*/
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า header และคลาสที่ชื่อว่า nav-list และแท็ค ul a เมื่อแสดงผลในภายหลังแล้วให้มีการแสดงผลเป็นค่าเริ่มต้น*/
+	#header .nav-list ul a:after {
+		display: none;
+	}
+ 
+	/*กำหนดให้ element ที่มี  id ที่ชื่อว่า educations และคลาสที่ชื่อว่า education-bottom และคลาสที่ชื่อว่า education-item กำหนดให้ความสูงไม่เกิน 20 % และความกว้างระหว่าง element 1.5 % */
+	#educations .education-bottom .education-item {
+		flex-basis: 20%;
+		margin: 1.5%;
+	}
+}
+/* End  Media Query For Desktop */
+ 
+ 
