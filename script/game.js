@@ -54,6 +54,7 @@ function keyUpHandler(e) {
 }
 
 function drawBricks() {
+  `use strict`;
   for (c = 0; c < brickColumnCount; c++) {
     for (r = 0; r < brickRowCount; r++) {
       if (bricks[c][r].status === 1) {
@@ -88,6 +89,7 @@ function drawPaddle() {
 }
 
 function collisionDetection() {
+  `use strict`;
   for (c = 0; c < brickColumnCount; c++) {
     for (r = 0; r < brickRowCount; r++) {
       var b = bricks[c][r];
@@ -97,7 +99,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if (score === brickRowCount * brickColumnCount) {
-            alert(`ชนะแล้วโว้ย!`);
+            alert(`คุณชนะแล้ว!`);
             document.location.reload();
           }
         }
@@ -119,6 +121,7 @@ function drawLives() {
 }
 
 function draw() {
+  `use strict`;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
@@ -135,7 +138,7 @@ function draw() {
     } else {
       lives--;
       if (!lives) {
-        alert(`ว๊าย แพ้แล้วนะจ๊ะ`);
+        alert(`คุณแพ้แล้ว`);
         document.location.reload();
       } else {
         x = canvas.width / 2;
